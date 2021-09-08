@@ -56,6 +56,10 @@ myKeys =
  --layout
    ("M-<Tab>", sendMessage NextLayout),
    ("M-S-t", sinkAll),
+ --audio
+   ("<XF86AudioMute>", spawn ("pamixer -t")),
+   ("<XF86AudioLowerVolume>", spawn ("pamixer -d 5")),
+   ("<XF86AudioRaiseVolume>", spawn ("pamixer -i 5")),
  --quit and restart
    ("M-<Delete>", spawn "xmonad --recompile; xmonad --restart"),
    ("M-S-<Delete>", io (exitWith ExitSuccess))
