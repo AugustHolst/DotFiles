@@ -52,7 +52,9 @@ myKeys =
    ("M-k", windows W.focusUp),
    ("M-S-j", windows W.swapDown),
    ("M-S-k", windows W.swapUp),
-   ("M-<Space>", windows W.swapMaster),
+   ("M-m", windows W.swapMaster),
+ --language
+   ("M-<Space>", spawn ("sh ~/utility_scripts/toggle_lang.sh")),
  --layout
    ("M-<Tab>", sendMessage NextLayout),
    ("M-S-t", sinkAll),
