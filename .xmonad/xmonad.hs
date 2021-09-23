@@ -60,6 +60,8 @@ myKeys =
    ("<XF86AudioMute>", spawn ("pamixer -t")),
    ("<XF86AudioLowerVolume>", spawn ("pamixer -d 5")),
    ("<XF86AudioRaiseVolume>", spawn ("pamixer -i 5")),
+   ("<XF86MonBrightnessDown>", spawn ("xbacklight -dec 5")),
+   ("<XF86MonBrightnessUp>", spawn ("xbacklight -inc 5")),
  --quit and restart
    ("M-<Delete>", spawn "xmonad --recompile; xmonad --restart"),
    ("M-S-<Delete>", io (exitWith ExitSuccess))
