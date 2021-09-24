@@ -3,6 +3,7 @@ import XMonad.Hooks.DynamicLog
 import XMonad.Util.Run
 import XMonad.Util.SpawnOnce
 import XMonad.Util.EZConfig (additionalKeysP)
+import XMonad.Layout.Grid
 import XMonad.Layout.Spacing
 import Data.Monoid
 import System.Exit
@@ -35,11 +36,6 @@ myWorkspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 myNormalBorderColor  = "#312d3f"
 myFocusedBorderColor = "#f5cfd3"
 
---myColors = fmap T.lines (T.readFile "$(HOME).cache/wal/colors")
-
---myNormalBorderColor  = snd (uncurry (myColors !! 0))
---myFocusedBorderColor = snd (uncurry (myColors !! 6))
-
 myKeys :: [(String, X ())]
 myKeys =
  --start programs
@@ -69,13 +65,8 @@ myKeys =
    ("M-S-<Delete>", io (exitWith ExitSuccess))
  ]
 
-myLayoutHook = tiled ||| Full
- where
-  tiled = spacing 16 $ Tall nmaster delta ratio
-  nmaster = 1
-  ratio = 1/2
-  delta = 3/100
-
+mySpacing = spacingRaw True (Border 14 14 14 14) True (Border 7 7 7 7) True
+myLayoutHook = (mySpacing $ Tall 1 (3/100) (1/2)) ||| Full ||| (mySpacing $ Grid)
 myEventHook = handleEventHook def
 
 myLogHook = return ()
