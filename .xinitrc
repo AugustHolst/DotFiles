@@ -50,5 +50,6 @@ fi
 
 nitrogen --restore &
 wal -R
+sh ~/utility_scripts/wal_x.sh
 picom &
 exec xmonad

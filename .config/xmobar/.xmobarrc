@@ -2,11 +2,11 @@ Config {
 
    -- appearance
      font =         "xft:Bitstream Vera Sans Mono:size=11:bold:antialias=true"
-   , bgColor =      "#030044"
-   , fgColor =      "#646464"
+   , bgColor =      "#312d3f"
+   , fgColor =      "#e9e6ea"
    , position =     Top
    , border =       BottomB
-   , borderColor =  "#030044"
+   , borderColor =  "#312d3f"
 
    -- layout
    , sepChar =  "%"   -- delineator between plugin names and straight text

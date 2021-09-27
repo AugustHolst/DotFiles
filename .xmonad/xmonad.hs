@@ -11,8 +11,6 @@ import XMonad.Actions.WithAll
 
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
-import qualified Data.Text       as T
-import qualified Data.Text.IO    as T
 import qualified Data.List       as L
 
 
@@ -65,7 +63,7 @@ myKeys =
    ("M-S-<Delete>", io (exitWith ExitSuccess))
  ]
 
-mySpacing = spacingRaw True (Border 14 14 14 14) True (Border 7 7 7 7) True
+mySpacing = spacingRaw True (Border 9 9 16 16) True (Border 4 4 8 8) True
 myLayoutHook = (mySpacing $ Tall 1 (3/100) (1/2)) ||| Full ||| (mySpacing $ Grid)
 myEventHook = handleEventHook def
 
@@ -74,6 +72,7 @@ myLogHook = return ()
 myStartupHook = do
  spawnOnce "nitrogen --restore &"
  spawnOnce "wal -R"
+ spawnOnce "sh ~/utility_scripts/wal_x.sh"
  spawnOnce "picom &"
 
 main :: IO ()
