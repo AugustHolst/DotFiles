@@ -1,10 +1,11 @@
 Config { 
 
    -- appearance
-     font =         "xft:Bitstream Vera Sans Mono:size=11:bold:antialias=true"
+     font =         "xft:JetBrains Mono:size=10:bold"
    , bgColor =      "#312d3f"
    , fgColor =      "#e9e6ea"
-   , position =     Top
+   , alpha =        255
+   , position =     TopP 0 0
    , border =       BottomB
    , borderColor =  "#312d3f"
 
